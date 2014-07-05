@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="month" class="java.lang.String"/>
+	<parameter name="year" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from surat_keluar where month(tgl_surat)=$P{month} AND year(tgl_surat)=$P{year} order by tgl_surat asc]]>
+	</queryString>
+	<field name="no_surat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_surat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tujuan_surat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pengirim_surat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prihal_surat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tahun" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="162" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="8" width="785" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="110" width="785" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="120" y="13" width="570" height="35"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN SURAT KELUAR BULANAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="79" width="232" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Surat Keluar Pada Bulan]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="403" y="79" width="100" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{month}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="476" y="79" width="100" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tahun]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="533" y="78" width="100" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{year}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="127" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[No surat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="126" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tanggal Surat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="126" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tujuan Surat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="426" y="127" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Pengirim Surat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="563" y="126" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Perihal Surat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="696" y="127" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tahun]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="48" width="457" height="32"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KEMENTERIAN AGAMA KABUPATEN BANYUMAS PURWOKERTO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch"/>
+		<band height="43">
+			<textField>
+				<reportElement x="7" y="7" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{no_surat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="143" y="7" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tgl_surat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="286" y="7" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tujuan_surat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="426" y="7" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pengirim_surat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="563" y="7" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prihal_surat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="696" y="7" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tahun}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="85" splitType="Stretch">
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="742" y="40" width="36" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="568" y="40" width="170" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="1" y="46" width="209" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="526" y="5" width="143" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah Surat Masuk]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="669" y="5" width="100" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["" + $V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
